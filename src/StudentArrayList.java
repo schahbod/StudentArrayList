@@ -20,7 +20,7 @@ public class StudentArrayList {
 
         System.out.println("\nStudents and their Departments:");
         for (Lehre leher : leherList) {
-            System.out.println(leher.getStudentName() + " is in the " + leher.getDepartment() + " department.");
+            leher.printStudentInfo();  // Calling the method in Lehre class
         }
 
         ArrayList<Anmeldung> anmeldungList = new ArrayList<>();
@@ -56,6 +56,29 @@ public class StudentArrayList {
 
         public void setDepartment(String department) {
             this.department = department;
+        }
+
+
+        public void printStudentInfo() {
+            System.out.println(studentName + " ist in der " + department + " Abteilung.");
+        }
+
+
+        public void printStudentInfo(String infoType) {
+            if ("Department".equalsIgnoreCase(infoType)) {
+                System.out.println(studentName + " ist in der " + department + " Abteilung.");
+            } else {
+                System.out.println("Ungültige Information");
+            }
+        }
+
+
+        public void printStudentInfo(String infoType, int year) {
+            if ("Year".equalsIgnoreCase(infoType)) {
+                System.out.println(studentName + " ist in der " + department + " Abteilung, Jahr: " + year);
+            } else {
+                System.out.println("Ungültige Information");
+            }
         }
     }
 
